@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUTAN - Menjelajahi Keindahan Alam</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Variabel Warna */
+        :root {
+            --primary-color: #2d5016;
+            --secondary-color: #4a7c3a;
+            --accent-color: #8db580;
+            --light-color: #f5f9f2;
+            --dark-color: #1a2e0d;
+            --text-color: #333;
+            --text-light: #fff;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232d5016"/><path d="M0,50 Q25,30 50,50 T100,50" fill="%234a7c3a"/></svg>');
+            background-size: cover;
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            margin-left: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 46, 13, 0.7), rgba(26, 46, 13, 0.5)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%234a7c3a"/><circle cx="200" cy="150" r="80" fill="%238db580"/><circle cx="400" cy="100" r="60" fill="%238db580"/><circle cx="600" cy="120" r="70" fill="%238db580"/><circle cx="800" cy="80" r="90" fill="%238db580"/><circle cx="1000" cy="150" r="75" fill="%238db580"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+        
+        .intro {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .intro p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+        }
+        
+        .feature-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🌲</span>
+                <h1>HUTAN</h1>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang Hutan</a></li>
+                    <li><a href="#">Keanekaragaman Hayati</a></li>
+                    <li><a href="#">Konservasi</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di Dunia Hutan</h2>
+            <p>Jelajahi keindahan, keajaiban, dan pentingnya hutan bagi kehidupan di Bumi</p>
+            <a href="#" class="btn">Mulai Menjelajah</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2 class="section-title">Mengenal Lebih Dekat Hutan Kita</h2>
+            <p>Hutan adalah paru-paru dunia yang tidak hanya menyediakan oksigen tetapi juga menjadi rumah bagi jutaan spesies flora dan fauna. Di Indonesia, hutan memiliki peran vital dalam menjaga keseimbangan ekosistem dan menjadi sumber kehidupan bagi masyarakat sekitar.</p>
+            <p>Hutan tropis Indonesia adalah yang terbesar ketiga di dunia setelah Brazil dan Republik Demokratik Kongo. Dengan luas sekitar 125 juta hektar, hutan Indonesia menyimpan kekayaan hayati yang tak ternilai. Setiap hektar hutan tropis dapat menjadi rumah bagi lebih dari 750 jenis pohon, 1.500 jenis tanaman, 400 jenis burung, 150 jenis kupu-kupu, 100 jenis reptil, 60 jenis amfibi, dan tak terhitung jumlah serangga serta mikroorganisme.</p>
+            <p>Selain sebagai habitat bagi keanekaragaman hayati, hutan juga berperan penting dalam siklus air, pencegahan erosi, penyerapan karbon, dan penyedia sumber daya alam yang mendukung kehidupan manusia. Hutan memberikan kita kayu, obat-obatan, makanan, dan berbagai produk lainnya yang esensial bagi keberlangsungan hidup.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-img">🌳</div>
+                <div class="feature-content">
+                    <h3>Jenis-Jenis Hutan</h3>
+                    <p>Indonesia memiliki beragam jenis hutan, mulai dari hutan hujan tropis, hutan musim, hutan bakau, hingga hutan gambut. Setiap jenis hutan memiliki karakteristik dan ekosistem unik yang mendukung kehidupan berbagai spesies.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">🐾</div>
+                <div class="feature-content">
+                    <h3>Keanekaragaman Hayati</h3>
+                    <p>Hutan Indonesia adalah rumah bagi ribuan spesies endemik seperti orangutan, harimau sumatera, badak jawa, dan berbagai burung langka. Keanekaragaman ini menjadikan hutan kita sebagai laboratorium hidup yang tak ternilai.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">💧</div>
+                <div class="feature-content">
+                    <h3>Fungsi Ekologis</h3>
+                    <p>Hutan berperan penting dalam menjaga keseimbangan alam, mengatur siklus air, mencegah banjir dan erosi, serta menyerap karbon dioksida untuk mengurangi dampak perubahan iklim.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2 class="section-title">Ancaman terhadap Hutan</h2>
+            <p>Meskipun memiliki peran vital, hutan di Indonesia dan dunia menghadapi berbagai ancaman serius. Deforestasi, kebakaran hutan, perubahan iklim, dan perburuan liar adalah beberapa tantangan utama yang mengancam kelestarian hutan kita.</p>
+            <p>Deforestasi terjadi dengan laju yang mengkhawatirkan. Setiap tahun, jutaan hektar hutan hilang karena alih fungsi lahan untuk perkebunan, pertambangan, dan pemukiman. Kebakaran hutan, baik yang terjadi secara alami maupun akibat ulah manusia, juga menyebabkan kerusakan ekosistem yang parah dan melepaskan karbon dalam jumlah besar ke atmosfer.</p>
+            <p>Perubahan iklim global turut mempengaruhi kesehatan hutan melalui pola curah hujan yang tidak menentu, kenaikan suhu, dan meningkatnya frekuensi bencana alam. Sementara itu, perburuan liar dan perdagangan satwa langka terus mengancam populasi spesies endemik yang sudah terancam punah.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Mari Menjaga Hutan Kita</h2>
+            <p>Setiap tindakan kecil kita dapat memberikan dampak besar bagi pelestarian hutan. Mulai dari mengurangi penggunaan kertas, mendukung produk ramah lingkungan, hingga terlibat dalam kegiatan konservasi.</p>
+            <a href="#" class="btn" style="background-color: var(--light-color); color: var(--dark-color);">Bergabung dengan Kami</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang HUTAN</h3>
+                <p>HUTAN adalah platform edukasi dan informasi tentang hutan, alam, dan lingkungan. Kami berkomitmen untuk meningkatkan kesadaran masyarakat akan pentingnya pelestarian hutan.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <a href="#">Beranda</a>
+                <a href="#">Tentang Kami</a>
+                <a href="#">Artikel</a>
+                <a href="#">Galeri</a>
+                <a href="#">Kontak</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak Kami</h3>
+                <p>Email: info@hutan.id</p>
+                <p>Telepon: (021) 1234-5678</p>
+                <p>Alamat: Jl. Konservasi No. 123, Jakarta</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">TW</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 HUTAN. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
