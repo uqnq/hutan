@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menjelajahi Hutan Pinus Banjarbaru yang Mempesona</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #2e8b57; /* Warna hijau hutan */
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .hero-image {
+            width: 100%;
+            height: 250px;
+            background-color: #c8e6c9; /* Warna hijau muda untuk placeholder */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .hero-image svg {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+        }
+        .content {
+            padding: 0 15px;
+        }
+        h2 {
+            color: #388e3c; /* Warna hijau tua yang lebih gelap */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #a5d6a7;
+            padding-bottom: 5px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #1b5e20;
+        }
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .container {
+                padding: 15px 30px;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            .hero-image {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Menjelajahi Hutan Pinus Banjarbaru yang Mempesona</h1>
+    </header>
+
+    <div class="container">
+        <div class="hero-image">
+            <!-- SVG Gambar Hutan Pinus -->
+            <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ADD8E6;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                        <feOffset dx="2" dy="2" result="offsetblur"/>
+                        <feMerge>
+                            <feMergeNode in="offsetblur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Langit -->
+                <rect width="100%" height="50%" fill="url(#skyGradient)" />
+                <!-- Matahari sederhana -->
+                <circle cx="520" cy="80" r="30" fill="#FFD700" filter="url(#shadow)"/>
+
+                <!-- Bukit/Jarak jauh -->
+                <path d="M 0 150 Q 100 100 200 150 T 400 150 T 600 150 L 600 300 L 0 300 Z" fill="#90EE90" />
+                <path d="M 0 170 Q 80 120 160 170 T 320 170 T 480 170 T 600 170 L 600 300 L 0 300 Z" fill="#32CD32" opacity="0.7" />
+
+                <!-- Hutan Pinus -->
+                <!-- Pohon 1 -->
+                <g transform="translate(100, 140)">
+                    <path d="M 0 -80 L -20 -20 L 20 -20 L 0 -80 Z" fill="#228B22"/>
+                    <path d="M -15 -50 L -5 -20 L 5 -20 L -15 -50 Z" fill="#32CD32"/>
+                    <path d="M -10 -30 L 0 -10 L 10 -30 L -10 -30 Z" fill="#2E8B57"/>
+                    <rect x="-5" y="0" width="10" height="20" fill="#8B4513"/>
+                </g>
+                <!-- Pohon 2 -->
+                <g transform="translate(200, 150)">
+                    <path d="M 0 -90 L -25 -25 L 25 -25 L 0 -90 Z" fill="#228B22"/>
+                    <path d="M -20 -60 L -10 -25 L 10 -25 L -20 -60 Z" fill="#32CD32"/>
+                    <path d="M -15 -40 L 0 -15 L 15 -40 L -15 -40 Z" fill="#2E8B57"/>
+                    <rect x="-8" y="10" width="16" height="25" fill="#8B4513"/>
+                </g>
+                <!-- Pohon 3 -->
+                <g transform="translate(350, 130)">
+                    <path d="M 0 -70 L -18 -15 L 18 -15 L 0 -70 Z" fill="#228B22"/>
+                    <path d="M -12 -40 L -5 -15 L 5 -40 L -12 -40 Z" fill="#32CD32"/>
+                    <path d="M -8 -25 L 0 -10 L 8 -25 L -8 -25 Z" fill="#2E8B57"/>
+                    <rect x="-4" y="0" width="8" height="15" fill="#8B4513"/>
+                </g>
+                 <!-- Pohon 4 (lebih jauh) -->
+                <g transform="translate(480, 160)" opacity="0.8">
+                    <path d="M 0 -60 L -15 -15 L 15 -15 L 0 -60 Z" fill="#228B22"/>
+                    <path d="M -10 -35 L -4 -15 L 4 -35 L -10 -35 Z" fill="#32CD32"/>
+                    <rect x="-3" y="0" width="6" height="12" fill="#8B4513"/>
+                </g>
+                 <!-- Jalan setapak -->
+                 <path d="M 150 250 Q 250 280 400 250 L 400 300 L 150 300 Z" fill="#D2B48C" opacity="0.8"/>
+                 <path d="M 160 255 Q 250 275 390 255 L 390 295 L 160 295 Z" fill="#F5DEB3" />
+
+                <!-- Rumput -->
+                <rect x="0" y="250" width="600" height="50" fill="#98FB98" />
+            </svg>
+            <span class="alt-text">Ilustrasi hutan pinus yang rindang dengan jalan setapak di tengahnya.</span>
+        </div>
+
+        <div class="content">
+            <p>
+                Bagi Anda yang berdomisili di Kalimantan Selatan, khususnya Banjarbaru dan sekitarnya,
+                mencari tempat rekreasi yang menawarkan ketenangan dan keindahan alam mungkin menjadi
+                prioritas. Kabar baiknya, terdapat sebuah permata tersembunyi yang semakin populer
+                dan menawarkan pengalaman berbeda: <span class="highlight">hutan pinus Banjarbaru</span>.
+                Tempat ini bukan sekadar kumpulan pohon, melainkan sebuah oasis hijau yang mengundang
+                Anda untuk bersantai, berpetualang, dan menikmati udara segar yang jauh dari hiruk pikuk
+                perkotaan.
+            </p>
+
+            <h2>Menyelami Keindahan Hutan Pinus</h2>
+            <p>
+                Hutan pinus ini menawarkan pemandangan yang begitu menyegarkan mata. Gugusan pohon pinus
+                yang menjulang tinggi membentuk kanopi hijau yang rindang, menciptakan suasana sejuk
+                dan teduh sepanjang hari. Cahaya matahari yang menyusup melalui celah-celah dedaunan
+                menciptakan pola bayangan yang menari di atas tanah berumput dan daun-daun kering yang
+                berserakan. Aroma khas getah pinus yang semerbak begitu kental terasa, menambah
+                nuansa alami dan menenangkan. Berjalan-jalan di antara pepohonan ini terasa seperti
+                melangkah ke dunia lain, tempat di mana waktu seolah berhenti dan segala kekhawatiran
+                terlupakan.
+            </p>
+
+            <h2>Aktivitas Menarik di Hutan Pinus Banjarbaru</h2>
+            <p>
+                Selain menikmati keindahan visual dan aroma yang menenangkan, hutan pinus Banjarbaru
+                juga menyediakan beragam aktivitas yang bisa Anda lakukan bersama keluarga, teman,
+                atau bahkan sendiri. Salah satu kegiatan paling populer adalah <span class="highlight">jalan santai</span>
+                atau sekadar duduk-duduk menikmati suasana. Jalur-jalur setapak yang tersedia sangat
+                ideal untuk dijelajahi, membawa Anda lebih dalam ke jantung hutan.
+            </p>
+            <p>
+                Bagi para pencinta fotografi, tempat ini adalah surga. Setiap sudut menawarkan komposisi
+                yang menarik, mulai dari tekstur kulit kayu pinus yang unik, siluet pepohonan saat
+                senja, hingga detail tumbuhan kecil di bawahnya. Jangan lupa membawa kamera Anda untuk
+                mengabadikan momen-momen indah.
+            </p>
+            <p>
+                Bagi yang gemar berpetualang ringan, Anda bisa mencoba <span class="highlight">berkemah</span>.
+                Beberapa area di sekitar hutan pinus memungkinkan untuk mendirikan tenda, memberikan
+                pengalaman menginap di alam terbuka yang tak terlupakan. Bayangkan bangun pagi disambut
+                udara segar dan suara alam, sungguh sebuah relaksasi total. Tentu saja, pastikan Anda
+                mematuhi aturan setempat dan menjaga kebersihan lingkungan.
+            </p>
+            <p>
+                Hutan pinus Banjarbaru juga menjadi lokasi favorit untuk <span class="highlight">piknik</span>.
+                Membawa bekal makanan sederhana dan menikmatinya di bawah rindangnya pohon pinus
+                bersama orang terkasih adalah cara sempurna untuk menghabiskan akhir pekan. Suasana yang
+                tenang dan jauh dari kebisingan kota akan membuat pengalaman piknik Anda semakin spesial.
+            </p>
+
+            <h2>Tips Berkunjung</h2>
+            <p>
+                Agar kunjungan Anda ke hutan pinus Banjarbaru semakin menyenangkan, ada beberapa tips
+                yang bisa Anda perhatikan. Pertama, selalu perhatikan kondisi cuaca sebelum berangkat.
+                Meskipun teduh, hujan bisa datang tiba-tiba, jadi membawa payung atau jas hujan bisa
+                menjadi ide yang baik.
+            </p>
+            <p>
+                Kedua, kenakan pakaian dan alas kaki yang nyaman. Anda akan banyak berjalan kaki, jadi
+                sepatu yang kokoh dan pakaian yang menyerap keringat sangat disarankan. Jangan lupa
+                juga untuk membawa obat nyamuk atau lotion anti serangga, terutama jika Anda berencana
+                berkunjung di sore hari atau saat cuaca lembap.
+            </p>
+            <p>
+                Ketiga, yang terpenting, selalu jaga kebersihan. Bawa kembali semua sampah Anda dan
+                jangan merusak lingkungan sekitar. Hutan pinus Banjarbaru adalah aset alam yang berharga,
+                mari kita jaga kelestariannya agar dapat dinikmati oleh generasi mendatang.
+            </p>
+
+            <p>
+                Hutan pinus Banjarbaru menawarkan pelarian yang sempurna dari rutinitas harian.
+                Dengan keindahan alamnya yang memesona dan beragam aktivitas yang bisa dilakukan,
+                tempat ini patut Anda masukkan dalam daftar destinasi wisata Anda di Kalimantan Selatan.
+                Nikmati kesegaran udaranya, keheningan suasananya, dan keajaiban alamnya.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Hak Cipta Dilindungi.</p>
+    </footer>
+<script src="/ik.js"></script>
+<div class="related"><h3>Related Posts</h3><ul>
+<li><a href="/hutan-rawa">Hutan Rawa</a></li>
+<li><a href="/hutan-eropa">Hutan Eropa</a></li>
+<li><a href="/hutan-cagar-alam-adalah">Hutan Cagar Alam Adalah</a></li>
+<li><a href="/hutan-alas-purwo">Hutan Alas Purwo</a></li>
+<li><a href="/hutan-forest">Hutan Forest</a></li>
+<li><a href="/hutan-gambut">Hutan Gambut</a></li>
+<li><a href="/hutan-boreal">Hutan Boreal</a></li>
+<li><a href="/hutan-ekosistem">Hutan Ekosistem</a></li>
+<li><a href="/hutan-bisa-memberi-kita-makan-artinya">Hutan Bisa Memberi Kita Makan Artinya</a></li>
+<li><a href="/hutan-amazon-dimana">Hutan Amazon Dimana</a></li>
+<li><a href="/hutan-congo">Hutan Congo</a></li>
+<li><a href="/hutan-pinus">Hutan Pinus</a></li>
+</ul></div>
+<div style="text-align:center; margin:30px 0;"><a href="/" style="text-decoration:none; font-size:18px;">🏠 Homepage</a></div>
+</body>
+</html>
